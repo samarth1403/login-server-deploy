@@ -29,6 +29,10 @@ const PORT = process.env.PORT;
 
 dbconnect();
 
+app.use('/',(req,res)=>{
+  res.send("Server is Live");
+})
+
 app.use('/api/user',authRouter);
 
 app.listen(PORT, () => {
