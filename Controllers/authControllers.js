@@ -47,7 +47,6 @@ export const loginUserController = async (req, res) => {
         _id: foundUser?._id,
         name: foundUser?.name,
         email: foundUser?.email,
-        mobile: foundUser?.mobile,
         Token: generateToken(foundUser?._id),
       },
       res: {
