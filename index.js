@@ -29,7 +29,7 @@ const PORT = process.env.PORT;
 
 dbconnect();
 
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send("Server is Live");
 })
 
