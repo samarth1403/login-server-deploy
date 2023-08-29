@@ -2,10 +2,10 @@ import express from "express";
 import bodyparser from "body-parser";
 import cors from "cors";
 import dotenv from "dotenv";
+// import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import dbconnect from "./Config/dbConnect.js";
 import authRouter from "./Routes/authRoute.js";
-
 
 const app = express();
 
@@ -29,13 +29,8 @@ const PORT = process.env.PORT;
 
 dbconnect();
 
-app.get('/',(req,res)=>{
-  res.send("Server is Live");
-})
-
-app.use('/api/user',authRouter);
+app.use("/user", authRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is Running at PORT : ${PORT}`);
 });
-
